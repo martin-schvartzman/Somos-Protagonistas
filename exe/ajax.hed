@@ -1,0 +1,13 @@
+<?php
+
+
+if(!isset($_GET["cat"]))
+$category="home";
+else
+$category=$_GET["cat"];
+
+
+include("/exe/index/".$category.".hed");
+$diseno="/views/index/".$category.".inc";
+
+?>

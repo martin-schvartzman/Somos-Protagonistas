@@ -1,0 +1,16 @@
+<?php
+
+
+if(!isset($_GET["cat"]))
+$category="home";
+else
+$category=$_GET["cat"];
+
+echo '<link rel="stylesheet" href="/views/index/index.css"/>';
+include("/exe/index/".$category.".hed");
+$diseno="/views/index/".$category.".inc";
+
+$epi=new episodios();
+$epi=$epi->traer(); 
+
+?>

@@ -1,0 +1,44 @@
+<?php
+echo '<link rel="stylesheet" type="text/css" href="/views/admin/abmepisodios.css" />';
+
+
+
+
+if(isset($_POST["delete"])){
+$x=new episodio($_POST["id"]);
+$x->delete();
+}
+
+if(isset($_POST["new"])){
+$x=new episodios();
+$x->add(antinject($_POST["descripcion"]),antinject($_POST["empresa"]),antinject($_POST["video"]),antinject($_POST["fecha"]));
+}
+
+if(isset($_POST["edit"])){
+$x=new episodio($_POST["id"]);
+$x->edit(antinject($_POST["descripcion"]),antinject($_POST["empresa"]),antinject($_POST["video"]));
+}
+
+
+
+$rub=new rubros();
+$rub=$rub->traer();
+
+$emp=array();
+if(isset($_GET["rub"]) ){
+	$aux=new rubro($_GET["rub"]);
+	$emp=$aux->empresas();
+}else if(count($rub) > 0){
+	$emp=$rub[0]->empresas();
+	$_GET["rub"]=$rub[0]->id;
+}
+
+$epi=array();
+if(isset($_GET["emp"]) ){
+	$aux=new empresa($_GET["emp"]);
+	$epi=$aux->episodios();
+}else if(count($emp) > 0){
+	$epi=$emp[0]->episodios();
+	$_GET["emp"]=$emp[0]->id;
+}
+?>

@@ -1,0 +1,42 @@
+<?php
+
+echo '<link href="views/index/invitados.css" rel="stylesheet" type="text/css">';
+
+
+
+
+$rubros=new rubros();
+$rubros=$rubros->traer();
+
+if(isset($_GET["rub"])){
+	$rub=$_GET["rub"];
+}else{
+	@$rub=$rubros[0]->id;
+}
+
+foreach($rubros as $r){
+	if($r->id == $rub){
+		
+		$empresas=$r->empresas();
+		
+		if(isset($_GET["emp"])){
+			$emp=$_GET["emp"];
+		}else{
+			@$emp=$empresas[0]->id;
+		}
+		
+		foreach($empresas as $e){
+			if($e->id == $emp){
+				$episodios=$e->episodios();
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+?>

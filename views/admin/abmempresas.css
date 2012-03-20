@@ -1,0 +1,56 @@
+#abmempresas{
+width:800px;
+padding:20px;
+}
+
+#rubros div{
+float:left;
+height:50px;
+width:200px;
+cursor:pointer;
+background-color:#666666;
+}
+
+#actual{
+background-color:#222222;
+}
+
+.rubro{
+	width:400px;
+	height:50px;
+}
+
+.rubro div.nombre, .rubro div.edit , .rubro div.delete{
+	float:left;
+	height:50px;
+}
+
+.rubro div.nombre{
+	width:300px;
+}
+
+ .rubro div.edit , .rubro div.delete, .new{
+	width:50px;
+	cursor:pointer;
+ }
+ 
+ input.edi,input.new,input.del{
+	border:0px;
+	width:50px;
+	height:50px;
+ }
+ 
+ input.edi{
+	background-color:yellow;
+ }
+ 
+  input.del{
+	background-color:red;
+ }
+ 
+   input.new{
+	background-color:green;
+ }
+
+
+

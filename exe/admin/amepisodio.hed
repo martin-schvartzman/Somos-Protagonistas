@@ -1,0 +1,37 @@
+<?php
+echo '<link rel="stylesheet" type="text/css" href="/views/admin/home.css" />';
+?>
+
+<link type="text/css" href="/css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />	
+
+		<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+
+		<script type="text/javascript" src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+
+<?php
+
+
+if($_POST["id"] != 0){
+	$new=false;
+	$rub=new episodio($_POST["id"]);
+}else{
+	$new=true;
+}
+
+$rubros=new empresas();
+$rubros=$rubros->traer();
+echo '<script>
+
+$(document).ready(function() {
+		$( "#datepicker" ).datepicker();
+		
+		$( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );';
+if(!$new){
+echo '$( "#datepicker" ).val("'.$rub->fecha.'");';
+}		
+		 
+echo '});
+
+</script>';
+
+?>

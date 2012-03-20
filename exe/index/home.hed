@@ -1,0 +1,9 @@
+<?php
+
+echo '<link href="views/index/home.css" rel="stylesheet" type="text/css">';
+echo '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>';
+echo '<script type="text/javascript" src="exe/index/home.js"></script>';
+$vids=new episodios();
+$vids=$vids->home();
+
+?>

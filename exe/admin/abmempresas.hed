@@ -1,0 +1,31 @@
+<?php
+echo '<link rel="stylesheet" type="text/css" href="/views/admin/abmempresas.css" />';
+
+
+if(isset($_POST["delete"])){
+$x=new empresa($_POST["id"]);
+$x->delete();
+}
+
+if(isset($_POST["new"])){
+$x=new empresas();
+$x->add(antinject($_POST["nombre"]),antinject($_POST["descripcion"]),antinject($_POST["rubro"]));
+}
+
+if(isset($_POST["edit"])){
+$x=new empresa($_POST["id"]);
+$x->edit(antinject($_POST["nombre"]),antinject($_POST["descripcion"]),antinject($_POST["rubro"]));
+}
+
+$rub=new rubros();
+$rub=$rub->traer();
+
+$emp=array();
+if(isset($_GET["rub"]) ){
+	$aux=new rubro($_GET["rub"]);
+	$emp=$aux->empresas();
+}else if(count($rub) > 0){
+	$emp=$rub[0]->empresas();
+	$_GET["rub"]=$rub[0]->id;
+}
+?>

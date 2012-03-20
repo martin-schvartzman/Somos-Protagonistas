@@ -1,0 +1,11 @@
+<?php
+echo '<link rel="stylesheet" type="text/css" href="/views/admin/amrubro.css" />';
+
+if($_POST["id"] != 0){
+	$new=false;
+	$rub=new rubro($_POST["id"]);
+}else{
+	$new=true;
+}
+
+?>

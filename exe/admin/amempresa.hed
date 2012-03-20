@@ -1,0 +1,13 @@
+<?php
+echo '<link rel="stylesheet" type="text/css" href="/views/admin/amempresa.css" />';
+
+if($_POST["id"] != 0){
+	$new=false;
+	$rub=new empresa($_POST["id"]);
+}else{
+	$new=true;
+}
+
+$rubros=new rubros();
+$rubros=$rubros->traer();
+?>

@@ -1,0 +1,7 @@
+<?php
+
+echo '<link href="views/index/contacto.css" rel="stylesheet" type="text/css">';
+
+
+
+?>

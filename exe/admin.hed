@@ -1,0 +1,28 @@
+<?php
+echo '<link rel="stylesheet" type="text/css" href="/views/admin/admin.css" />';
+
+
+if(!isset($_GET["cat"]))$_GET["cat"]="login";
+if($_GET["cat"]=="unlog"){$_GET["cat"]="login";unset($_SESSION["log"]);$log=false;}
+
+$category=$_GET["cat"];
+
+
+if(isset($_SESSION["log"])){
+	$log=$_SESSION["log"];
+}
+
+if(isset($_POST["login"])){
+	if($_POST["user"]=="somosprotagonistas" && $_POST["pass"]=="esther1234")
+		{$_SESSION["log"]=true;$log=true;}
+	else
+		{$_SESSION["log"]=false;$log=false;}
+}
+
+if(!isset($log))$log=false;
+
+if(!$log)$category="login";
+
+include("/exe/admin/".$category.".hed");
+$diseno="/views/admin/".$category.".inc";
+?>

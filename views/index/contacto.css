@@ -1,0 +1,49 @@
+#contactomain{
+padding-left:66px;
+padding-top:24px;
+width:800px;
+height:387px;
+}
+
+#contacto{
+width:780px;
+height:367px;
+background-color:#2b2b2b;
+padding:20px;
+}
+
+#nombre,#email,#telefono,#comentario{
+width:400px;height:28px;margin:10px;
+}
+
+#nombre .b  input,#email .b input,#telefono .b input{
+background-color:#cccccc;
+color:#ffffff;
+height:28px;
+width:280px;
+font-size:12px;
+float:left;
+}
+
+#send{
+background-color:#cccccc;
+color:#000000;
+height:50px;
+width:280px;
+font-size:12px;
+margin-left: 80px;
+}
+
+
+#nombre .a,#email .a,#telefono .a,#comentario .a{
+color:#006699;
+font-size:12px;
+float:left;
+width:100px;
+text-align:left;
+}
+
+textarea{
+background-color:#cccccc;color:#ffffff;height:126px;width:280px;margin-left: 80px;margin-bottom:10px;
+}
+

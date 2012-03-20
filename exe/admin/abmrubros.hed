@@ -1,0 +1,23 @@
+<?php
+echo '<link rel="stylesheet" type="text/css" href="/views/admin/abmrubros.css" />';
+
+
+if(isset($_POST["delete"])){
+$x=new rubro($_POST["id"]);
+$x->delete();
+}
+
+if(isset($_POST["new"])){
+$x=new rubros();
+//var_dump($x);
+$x->add(antinject($_POST["nombre"]));
+}
+
+if(isset($_POST["edit"])){
+$x=new rubro($_POST["id"]);
+$x->edit(antinject($_POST["nombre"]));
+}
+
+$rub=new rubros();
+$rub=$rub->traer();
+?>

@@ -1,0 +1,62 @@
+<?php
+
+echo '<link href="views/index/episodios.css" rel="stylesheet" type="text/css">';
+
+function mes($m){
+switch($m){
+	case 1:
+		return "Enero";
+	case 2:
+		return "Febrero";
+	case 3:
+		return "Marzo";
+	case 4:
+		return "Abril";
+	case 5:
+		return "Mayo";
+	case 6:
+		return "Junio";
+	case 7:
+		return "Julio";
+	case 8:
+		return "Agosto";
+	case 9:
+		return "Septiembre";
+	case 10:
+		return "Octubre";
+	case 11:
+		return "Noviembre";
+	case 12:
+		return "Diciembre";
+}}
+
+$epis=new episodios();
+
+$years=$epis->years();
+
+if(isset($_GET["y"])){
+	$ye=$_GET["y"];
+}else{
+	@$ye=$years[0]["y"];
+}
+
+$months=$epis->months($ye);
+
+if(isset($_GET["m"])){
+	$mo=$_GET["m"];
+}else{
+	@$mo=$months[0]["m"];
+}
+
+$weeks=$epis->weeks($ye,$mo);
+
+if(isset($_GET["w"])){
+	$we=$_GET["w"];
+}else{
+	@$we=$weeks[0]["w"];
+}
+
+$epis=$epis->weekepisodes($ye,$mo,$we);
+
+
+?>
